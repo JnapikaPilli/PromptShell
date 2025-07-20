@@ -41,31 +41,33 @@ Say goodbye to memorizing long commands and hello to a more human terminal exper
 git clone https://github.com/JnapikaPilli/PromptShell.git
 cd PromptShell
 
-2. Create a Virtual Environment
+**2. Create a Virtual Environment**
 python3 -m venv venv
 source venv/bin/activate
 
-3. Install Dependencies
+**3. Install Dependencies**
 pip install -r requirements.txt
 
-4. Add Your API Key
-Create a .env file in the root directory:
+**4. Add Your API Key**
+Create a .env file in the root directory and add your Groq API key:
 GROQ_API_KEY=your_groq_api_key
 
-5. (Optional) Set Up Face Authentication
+**5. (Optional) Set Up Face Authentication**
 python setup_face.py
 
-7. Run the Application
+**6. Run the Application**
 python main.py
-🧪 Example Commands
+
+**🧪 Example Commands**
 You Type	PromptShell Does
 open my downloads folder	Opens the Downloads directory
 create folder named projects	Creates a folder called "projects"
-delete folder named test	Deletes "test" folder
+delete folder named test	Deletes the "test" folder
 change my pwd to /home/user	Changes working directory
 what is the capital of France	Replies with “Paris” via GPT
 who are you	Friendly AI chat mode
-🤝 Contribution Guidelines
+
+** * *🤝 Contribution Guidelines** * *
 We welcome contributions!
 
 🐛 Report bugs
@@ -78,8 +80,16 @@ We welcome contributions!
 
 Let’s make PromptShell better together!
 
-📩 Get in Touch
-Got questions or ideas? Reach out:
-
+**📩 Get in Touch**
 📧 jnapikapilli@gmail.com
-🔗 GitHub Profile
+
+**🔗 GitHub Profile**
+
+**📄 License**
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+* *Happy prompting with PromptShell! 🧠💻✨* *
+
+
+
+
