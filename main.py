@@ -6,16 +6,11 @@ import requests
 from dotenv import load_dotenv
 import pickle
 import face_recognition
-
-# Load API key from .env
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-MODEL = "llama3-8b-8192"  # Confirm this model is supported
-
-# Validate face data
+MODEL = "llama3-8b-8192" 
 def is_face_data_present():
     return os.path.exists("face_data/encodings.pkl") and os.path.exists("face_data/user.jpg")
-
 def generate_ai_response(prompt):
     try:
         url = "https://api.groq.com/openai/v1/chat/completions"
@@ -35,7 +30,6 @@ def generate_ai_response(prompt):
             return f"[Groq Error]: {response.status_code} - {response.json()}"
     except Exception as e:
         return f"[Exception] {e}"
-
 def execute_command():
     user_input = command_entry.get()
     command_entry.delete(0, tk.END)
@@ -48,13 +42,13 @@ def execute_command():
             output_text.insert(tk.END, f"Changed directory to {os.getcwd()}\n\n")
         except Exception as e:
             output_text.insert(tk.END, f"[cd Error]: {e}\n\n")
-    elif user_input.startswith("!"):  # System command
+    elif user_input.startswith("!"):
         try:
             result = subprocess.run(user_input[1:], shell=True, capture_output=True, text=True)
             output_text.insert(tk.END, f"{result.stdout or result.stderr}\n")
         except Exception as e:
             output_text.insert(tk.END, f"[Command Error]: {e}\n")
-    else:  # AI Prompt
+    else: 
         response = generate_ai_response(user_input)
         output_text.insert(tk.END, f"Assistant: {response}\n\n")
 
@@ -67,19 +61,15 @@ def start_gui():
 
     root = tk.Tk()
     root.title("PromptShell")
-
-    # Command input
     global command_entry
     command_entry = tk.Entry(root, width=80, font=("Arial", 12))
     command_entry.pack(padx=10, pady=10)
     command_entry.bind("<Return>", lambda event: execute_command())
 
-    # Output area
     global output_text
     output_text = scrolledtext.ScrolledText(root, width=100, height=30, wrap=tk.WORD, font=("Courier", 10))
     output_text.pack(padx=10, pady=10)
 
-    # Run button
     run_btn = tk.Button(root, text="Run", command=execute_command)
     run_btn.pack(pady=5)
 
