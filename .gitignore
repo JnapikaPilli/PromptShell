@@ -17,3 +17,7 @@ __pycache__/
 # VSCode or IDE settings
 .vscode/
 .idea/
+
+.env
+face_data/user.jpg
+*.png
