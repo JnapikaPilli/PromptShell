@@ -1,3 +1,8 @@
 face_data/
 face_data/
 face_data/
+face_data/
+*.jpg
+*.jpeg
+*.png
+*.pkl
