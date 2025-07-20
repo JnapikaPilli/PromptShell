@@ -1,13 +1,19 @@
-face_data/
-face_data/
-face_data/
+# Ignore face data and personal images
 face_data/
 *.jpg
-*.jpeg
 *.png
 *.pkl
-VoiceAssistAI/
-*.jpg
-*.jpeg
-*.png
-*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+*.env
+
+# VSCode or IDE settings
+.vscode/
+.idea/
